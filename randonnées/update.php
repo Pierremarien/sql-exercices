@@ -22,10 +22,11 @@ try {
             $stmt->bindParam(':id', $id);
 
             if ($stmt->execute()) {
-                echo "Randonnée mise à jour avec succès.";
+                echo "<div class='succes'>La randonnée a été ajoutée avec succès.</div>";
             } else {
-                echo "Erreur lors de la mise à jour de la randonnée.";
+                echo "<div class='error'>Erreur lors de l'ajout de la randonnée.</div>";
             }
+        }
         }
         $query = "SELECT * FROM hiking WHERE id = :id";
         $stmt = $bdd->prepare($query);
