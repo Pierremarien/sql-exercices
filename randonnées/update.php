@@ -27,7 +27,7 @@ try {
                 echo "<div class='error'>Erreur lors de l'ajout de la randonnée.</div>";
             }
         }
-        }
+        
         $query = "SELECT * FROM hiking WHERE id = :id";
         $stmt = $bdd->prepare($query);
         $stmt->bindParam(':id', $id);
@@ -36,6 +36,7 @@ try {
     } else {
         echo "Invalid request. Please provide a valid hike ID.";
     }
+
 } catch (Exception $e) {
     echo 'Erreur : ' . $e->getMessage();
 }
